@@ -91,4 +91,4 @@ pub fn is_valid_isbn(isbn: &str) -> bool {
 ```
 
 ## Summary
-For summary, i choosed this problem because i found it's the most fun out of all the problems i solved. Playing with string in rust is not easy (based on my amateur experience on python and java) so this challange do really play part in my experience understanding rust better. (Ps : sorry for my broken english, believe me rust isn't the only thing i'm improving :) )
+For summary, i choosed this problem because i found it's the most fun out of all the problems i solved. Playing with string in rust is not easy (based on my amateur experience on python and java) so this challange do really play part on my experience understanding rust better. (Ps : sorry for my broken english, believe me rust isn't the only thing i'm improving :) )
