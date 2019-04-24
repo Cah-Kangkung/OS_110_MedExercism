@@ -25,16 +25,16 @@ Some constraints applied, such as the string must be exactly 10 characters in le
 I've managed to solve the problem with something like:
 1. Remove all the "-" (dashes) with `.replace()`.
 2. Define the boundaries, wich is `string.len() == 10`.
-3. Declare variable called sum_of_multiplie that acts as a result.
+3. Declare variable `called sum_of_multiplie` that acts as a result.
 4. `.chars()` and `.enumerate()` to iterate over the string wich produce (i, c) where `i` is the index and `c` is the char element.
 5. Next is to check whether our char element is a legit decimal(10) digit or not using `.is_digit()`. if it is valid, implement our formula.
-6. If the last element is 'X', simply add 10 to the result
-7. return true if result % 11 == 0.
+6. If the last element is `'X'`, simply add `10` to the result
+7. return true if `result % 11 == 0`.
 
 Here is the code:
 ```Rust
 pub fn is_valid_isbn(isbn: &str) -> bool {
-    // remove dash and blank space
+	// remove dash and blank space
 	let raw_string = isbn.replace("-", "");
 	if raw_string.len() != 10 {return false}
 	
@@ -44,9 +44,9 @@ pub fn is_valid_isbn(isbn: &str) -> bool {
 	let mut sum_of_product = 0;
 	for (i, c) in raw_string.chars().enumerate() {
 		if c.is_digit(10) {
-			sum_of_product += (11-(i+1)) as u32 * c.to_string() // these method used to parse our char type element into integer
-												   .parse::<u32>()
-												   .unwrap();
+			sum_of_product += (11-(i+1)) as u32 * c.to_string() // these method convert our char element into int
+							       .parse::<u32>()
+							       .unwrap();
 		}
 		else if i == 9 && c == 'X' {
 			sum_of_product += 10;
@@ -55,7 +55,6 @@ pub fn is_valid_isbn(isbn: &str) -> bool {
 			return false
 		}
 	}
-	
 	sum_of_product % 11 == 0
 }
 ```
@@ -65,7 +64,7 @@ We could also use approach like converting the string into a list of chars first
 Like this:
 ```Rust
 pub fn is_valid_isbn(isbn: &str) -> bool {
-  // remove dash and blank space
+  	// remove dash and blank space
 	let raw_string = isbn.replace("-", "");
 	if raw_string.len() != 10 {return false}
 	
@@ -77,9 +76,9 @@ pub fn is_valid_isbn(isbn: &str) -> bool {
 		let element = list_chars[10-i]; // bind char element into variable
 		if element.is_digit(10) { // determine if the element is a legit decimal(10) digit or not
 			sum_of_product += element.to_string()
-									 .parse::<u32>()
-									 .unwrap() 
-									 * i as u32;
+						 .parse::<u32>()
+						 .unwrap() 
+						 * i as u32;
 		}		
 		else if i == 1 && element == 'X' {
 			sum_of_product += 10;
