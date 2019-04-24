@@ -10,6 +10,7 @@ i have completed about 7 medium problems for now, here is the list:
 - scrabble-score
 - triangle
 
-now i will explain on how i solvec  d .... problem
+Now i will explain on how i solve ISBN Verifier problem
 ___
 
+# THE PROBLEM
