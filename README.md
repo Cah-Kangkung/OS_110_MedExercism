@@ -13,6 +13,6 @@ i have completed about 7 medium problems for now, here is the list:
 Now i will explain on how i solve ISBN Verifier problem
 ___
 # ISBN VERIFIER
-___
+
 ## THE PROBLEM
 As explained on exercism, we have to determines wheter a string is valid isbn number or not.
